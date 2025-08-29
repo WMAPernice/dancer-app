@@ -1,0 +1,20 @@
+name: dancer-backend
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python version
+  - python=3.9
+  
+  # Core dependencies available via conda
+  - pip
+  - sqlalchemy
+  - python-dotenv
+  
+  # Dependencies that need pip (not available or better via pip)
+  - pip:
+    - fastapi
+    - uvicorn[standard]
+    - python-multipart
+    - boto3
+    - pydantic

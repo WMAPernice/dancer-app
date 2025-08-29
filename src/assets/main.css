@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+:root {
+    --primary-color: #2D2D2D;
+}
+
+html {
+    background: white;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: white;
+    color: var(--primary-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+#app {
+  font-weight: normal;
+}
+
+/* App Layout Container */
+.app-layout {
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Section */
+.navbar {
+    width: 100%;
+    height: 127px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-items a,
+.home-button {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover,
+.home-button:hover {
+    color: #666;
+}
+
+/* Main Body Section */
+.main-body {
+    flex: 1;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Centered Header */
+.centered-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+.centered-header .subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin: 0 0 2rem 0;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}
+
+/* Diagram Image */
+.diagram-image {
+    width: 561px;
+    height: 408px;
+    object-fit: cover;
+    margin-top: 72px;
+    display: block;
+}
+
+/* Submission Window Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.submission-window {
+    width: 1181px;
+    height: 655px;
+    background-color: #F6F6F6;
+    border: 3px solid #D8D8D8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.submission-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #E0E0E0;
+}
+
+.submission-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.selected-file {
+    margin: 0 0 1.5rem 0;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Metadata Form Styles */
+.metadata-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    max-width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-input {
+    padding: 0.75rem;
+    border: 2px solid #D8D8D8;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+/* Submission Actions */
+.submission-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #D8D8D8;
+}
+
+.finalize-button {
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+.finalize-button:hover:not(.disabled) {
+    background-color: #333;
+}
+
+.finalize-button.disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.finalize-button:disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Upload Status Messages */
+.upload-status {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.upload-status.error {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+}
+
+.upload-status.success {
+    background-color: #efe;
+    border: 1px solid #cfc;
+    color: #363;
+}
+
+.upload-status p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Upload Progress */
+.upload-progress {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
